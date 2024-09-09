@@ -24,25 +24,24 @@ app:navgraph="@navigation/main_navigate"
     -->
 
     <androidx.fragment.app.FragmentContainerView
-        class="androidx.navigation.fragment.NavHostFragment"
         android:id="@+id/nav_host_fragment"
-        android:layout_width="340dp"
-        android:layout_height="575dp"
+        class="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65"
 
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/main_navigate"
-        />
+        app:layout_constraintVertical_bias="0.65"
+        app:navGraph="@navigation/main_navigate" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="100sp"
-        android:layout_height="25sp"
+        android:layout_width="146dp"
+        android:layout_height="64dp"
         android:text="click"
         app:layout_constraintBottom_toTopOf="@+id/nav_host_fragment"
         app:layout_constraintEnd_toEndOf="parent"
