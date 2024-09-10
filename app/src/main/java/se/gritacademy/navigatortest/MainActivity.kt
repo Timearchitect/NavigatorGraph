@@ -33,7 +33,6 @@ lateinit var navController:NavController
             else
                 navController.navigate(R.id.action_blankFragment_to_blankFragment2)
 
-
         }
 
         //view.findNavController().navigate(R.id.viewTransactionsAction)
