@@ -24,6 +24,9 @@
         android:label="fragment_blank2"
         tools:layout="@layout/fragment_blank2" >
         <action
+            app:popUpTo="@id/blankFragment2"
+            app:popUpToInclusive="true"
+
             android:id="@+id/action_blankFragment2_to_blankFragment"
             app:destination="@id/blankFragment" />
     </fragment>
