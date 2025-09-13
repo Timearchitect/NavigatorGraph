@@ -5,13 +5,13 @@ plugins {
 
 android {
     namespace = "se.gritacademy.navigatortest"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "se.gritacademy.navigatortest"
         minSdk = 28
-        targetSdk = 33
-        versionCode = 1
+        targetSdk = 35
+        versionCode = 2
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

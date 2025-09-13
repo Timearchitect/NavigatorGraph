@@ -16,7 +16,11 @@
         tools:layout="@layout/fragment_blank" >
         <action
             android:id="@+id/action_blankFragment_to_blankFragment2"
-            app:destination="@id/blankFragment2" />
+            app:destination="@id/blankFragment2"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
+        <!--    app:popUpToInclusive="true" -->
+
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
@@ -24,11 +28,11 @@
         android:label="fragment_blank2"
         tools:layout="@layout/fragment_blank2" >
         <action
-            app:popUpTo="@id/blankFragment2"
-            app:popUpToInclusive="true"
-
             android:id="@+id/action_blankFragment2_to_blankFragment"
-            app:destination="@id/blankFragment" />
+            app:destination="@id/blankFragment"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
+        <!--app:popUpTo="@id/blankFragment2"-->
     </fragment>
     <activity
         android:id="@+id/mainActivity2"

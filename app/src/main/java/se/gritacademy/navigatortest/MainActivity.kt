@@ -1,5 +1,6 @@
 package se.gritacademy.navigatortest
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,13 +17,23 @@ class MainActivity : AppCompatActivity() {companion object{
     lateinit var navController:NavController
 
 }
+    @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
       //  supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, BlankFragment()).addToBackStack("frag1").commit()
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if(destination.id == R.id.blankFragment) {
+                Log.i("ALRIK", "blankFragment: "+destination.displayName)
+            }
 
+            if(destination.id == R.id.blankFragment2) {
+                Log.i("ALRIK", "blankFragment2: "+destination.displayName)
+                      //  navController.popBackStack(R.id.blankFragment, false)
+            }
+        }
 
         // val navUtanFrag= BlankFragment() as NavHostFragment
         findViewById<Button>(R.id.button2).setOnClickListener {
@@ -35,7 +46,6 @@ class MainActivity : AppCompatActivity() {companion object{
 
         findViewById<Button>(R.id.button).setOnClickListener {
             Log.i("alrik", "onCreate: "+navController.currentDestination!!.toString())
-
             Log.i("alrik", "onCreate: "+navController.currentDestination!!.toString()+navController.currentDestination!!.id)
             if(navController.currentDestination!!.id == R.id.blankFragment2)
                 navController.navigate(R.id.action_blankFragment2_to_blankFragment)
